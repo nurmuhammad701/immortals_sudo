@@ -1,0 +1,13 @@
+   # Binary fayllar
+   *.exe
+   *.exe~
+   *.dll
+   *.so
+   *.dylib
+
+   # Test binary fayllari va profil ma'lumotlari
+   *.test
+   *.prof
+
+   # Boshqa
+   .DS_Store
