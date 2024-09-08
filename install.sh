@@ -1,23 +1,23 @@
-   #!/bin/bash
+#!/bin/bash
 
-   set -e
+set -e
 
-   echo "Immortals CLI vositalarini o'rnatish boshlanmoqda..."
+echo "Immortals CLI vositalarini o'rnatish boshlanmoqda..."
 
-   # Go'ni tekshirish va o'rnatish
-   if ! command -v go &> /dev/null; then
-       echo "Go o'rnatilmagan. O'rnatilmoqda..."
-       sudo apt-get update
-       sudo apt-get install -y golang
-   fi
+# Go'ni tekshirish va o'rnatish
+if ! command -v go &> /dev/null; then
+    echo "Go o'rnatilmagan. O'rnatilmoqda..."
+    apt-get update
+    apt-get install -y golang
+fi
 
-   # Loyihani yuklab olish va kompilyatsiya qilish
-   echo "Manba kodini yuklab olish va kompilyatsiya qilish..."
-   go install github.com/sizning-username/sizning-repo@latest
+# Loyihani yuklab olish va kompilyatsiya qilish
+echo "Manba kodini yuklab olish va kompilyatsiya qilish..."
+go install github.com/nurmuhammad701/immortals_sudo@latest
 
-   # Binarni /usr/local/bin ga ko'chirish
-   echo "Binarni tizim katalogiga ko'chirish..."
-   sudo mv ~/go/bin/sizning-repo /usr/local/bin/immortals
+# Binarni /usr/local/bin ga ko'chirish
+echo "Binarni tizim katalogiga ko'chirish..."
+install -m 755 ~/go/bin/immortals_sudo /usr/local/bin/immortals
 
-   echo "Immortals muvaffaqiyatli o'rnatildi!"
-   echo "Quyidagi buyruqlar bilan ishlatishingiz mumkin: 'immortals todo' va 'immortals currency'"
+echo "Immortals muvaffaqiyatli o'rnatildi!"
+echo "Quyidagi buyruqlar bilan ishlatishingiz mumkin: 'immortals todo' va 'immortals currency'"
